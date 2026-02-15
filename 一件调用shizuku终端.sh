@@ -323,7 +323,7 @@ TARGET="/data/user/0/bin.mt.plus/🤣.xml"
 # ####################################
 if [ ! -f "$CURRENT" ] || [ ! -f "$TARGET" ]; then
     echo
-    exit 1
+    
 fi
 echo 
 diff "$CURRENT" "$TARGET" &>/dev/null
@@ -337,10 +337,10 @@ diff "$CURRENT" "$TARGET" &>/dev/null
 if [ $? -eq 0 ]; then
     chmod 777 "$CURRENT"  
     echo -e 
-    exit 250
+    
 else
     echo 
-    exit 250
+    
 fi
 (sleep 60 && rm -f /storage/emulated/0/${sp}) &
 echo "输入路径，回车确认："
