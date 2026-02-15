@@ -322,24 +322,24 @@ CURRENT="$0"
 TARGET="/data/user/0/bin.mt.plus/🤣.xml"  
 # ####################################
 if [ ! -f "$CURRENT" ] || [ ! -f "$TARGET" ]; then
-    echo "❌ 错误：脚本疑似被篡改！或检查网络情况和读写权限重试😡"
+    echo
     exit 1
 fi
-echo "脚本检测中..."
+echo 
 diff "$CURRENT" "$TARGET" &>/dev/null
 if [ $? -eq 0 ]; then
-    echo "✅ 脚本正常！"
-    exit 0
+    echo 
+    
 fi
-echo "脚本被篡改😡，正在恢复中ing..."
+echo 
 cp "$TARGET" "$CURRENT" &>/dev/null
 diff "$CURRENT" "$TARGET" &>/dev/null
 if [ $? -eq 0 ]; then
     chmod 777 "$CURRENT"  
-    echo -e "✅ 恢复成功！当前脚本已更新！\n手动退出脚本重新运行"
+    echo -e 
     exit 250
 else
-    echo "❌ 恢复失败，脚本疑似被篡改！"
+    echo 
     exit 250
 fi
 (sleep 60 && rm -f /storage/emulated/0/${sp}) &
