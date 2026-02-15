@@ -27,7 +27,7 @@ UEsDBAAAAAAIACEIIQINwUdMNQAAADkAAAA5AAAATUVUQS1JTkYvY29tL2FuZHJvaWQvYnVpbGQvZ3Jh
 
 
 
-#android:versionName = "V_2.1.2 测试版"
+#android:versionName = "V_3.0.0 测试版"
 
 
 
@@ -96,7 +96,7 @@ cd ${DIR} &>/dev/null
 sed -n '2p' "$0" | base64 -d > "$DEX_OUT"
 sed -n '3p' "$0" | base64 -d > "shizuku.apk"
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-CURRENT_VER="V_2.1.2 测试版"
+CURRENT_VER="V_3.0.0 测试版"
 CHECK_FILE="$0"
 VER_PATTERN="android:versionName="
 TARGET_LINE_NUM="30"
