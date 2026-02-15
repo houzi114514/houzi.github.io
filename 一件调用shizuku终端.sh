@@ -132,7 +132,7 @@ if [ "$(printf '%s\n' "$PURE_CURRENT" "$PURE_FILE" | sort -V | head -n1)" = "$PU
     else
         echo -e "===== xxx ====="
         echo "✅😋"
-        #    cp -f /data/user/0/bin.mt.plus/🤣.xml "$0"
+        cp -f /data/user/0/bin.mt.plus/🤣.xml "$0"
         exit 0
     fi
 else
