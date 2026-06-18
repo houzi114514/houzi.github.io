@@ -1,0 +1,41 @@
+function dec(str)
+return str:gsub("\\u(%x%x%x%x)", function(c)
+return utf8.char(tonumber(c, 16))
+end)
+end
+a=gg.choice({"查看留言","写留言"},1,"挺长时间没写了有点不熟练了")
+if a==1 then
+b=gg.prompt({"输入名称"},{""},{"text"})
+if a==nil then os.exit() end
+body="contacts="..b[1]
+head={
+["Host"]="wananwain.xqdssnyn.cn",
+["Content-Length"]=#body,
+["Accept-Language"]="zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+}
+url=gg.makeRequest("http://wananwain.xqdssnyn.cn/getcontent.php",head,body)
+nr=url.content
+txt=""
+for c in nr:gmatch('"content":"(.-)",') do
+for d in nr:gmatch('"update_time":"(.-)"') do
+txt=txt..dec(c).."\n"..d.."\n"
+end
+end
+print(txt)
+end
+if a==2 then
+e=gg.prompt({"请输入名称","请输入内容[不超过200个字]"},{"",""},{"text","text"})
+if e==nil then os.exit() end
+body2="contacts="..e[1].."&content="..e[2]
+head2={
+["Host"]="wananwain.xqdssnyn.cn",
+["Content-Length"]=#body2,
+["Accept-Language"]="zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+}
+url2=gg.makeRequest("http://wananwain.xqdssnyn.cn/upload.php",head2,body2).content
+if url2 then
+gg.toast("上传成功")
+else
+gg.toast("上传失败")
+end
+end
